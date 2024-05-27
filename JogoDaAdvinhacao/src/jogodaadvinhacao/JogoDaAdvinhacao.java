@@ -12,41 +12,54 @@ public class JogoDaAdvinhacao {
         int c, d;
         String p;
         System.out.print("Digite o seu nome: ");
+       do{
         p = ler.nextLine();
-        System.out.println("Gostaria de iniciar o jogo " + p + "?Digite 1 para continuar ou 2 para sair");
+        System.out.println("Gostaria de iniciar o jogo " + p + "? Digite 1 para continuar ou 2 para sair");
+        
         d = ler.nextInt();
+       int t = 0;
+        int y = 0;
+       
         switch (d) {
             
-            case 2:
-                if (d == 2) {
+            case 2:{
+                if (d != 2) {
                     System.out.println("Muito bem, saindo!");
                 }
         
                 break;
-                
-            case 1:
-                for (int i = 0;i!=ale;i++){
+            }
+            case 1:{
                 if (d == 1) {
                     System.out.println("Muito bem, vamos lá!!");
+                    
                 }
-                do {
+                 do { 
+                
+                
                     System.out.print("Digite um número: ");
                     c = ler.nextInt();
                     if (c > ale) {
                         System.out.println("O número secreto é menor, tente de novo");
+                        y++;
                     } else if (c < ale) {
                         System.out.println("O número secreto é maior, tente de novo");
-                    } else if (c == ale) {
-                        System.out.println("Você acertou " + p + " , parabéns!!!");
-                    }
-               
-                } while (c != ale);
-                System.out.println(i);
-                 break;
-                
+                        y++;
                     
+                 }else if (c == ale) {
+t++;
+                        System.out.println("Você acertou em "+ y + " tentativas " + p + " , parabéns!!! Você tem " + t + " vitórias");
+                                                t++;
+                    }
+              
+                } while (c != ale);
                
+               
+                 break;
+            }
+        }
+       }while(d!=2);
         }
         }
-    }
-}
+        
+    
